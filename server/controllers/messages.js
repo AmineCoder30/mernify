@@ -1,4 +1,5 @@
 import Message from "../models/messages.js";
+import Conversation from "../models/conversation.js";
 // Function to add a message to the database
 export const addMessage = async (req, res) => {
   try {
@@ -22,6 +23,14 @@ export const addMessage = async (req, res) => {
 
     // Save the message to the database
     await newMessage.save();
+
+    // Update the last message in the conversation
+    await Conversation.findByIdAndUpdate(conversationId, {
+      lastMessage: {
+        content: newMessage.content,
+        timestamp: newMessage.timestamp,
+      },
+    });
 
     // Send a success response
     res.status(200).json({ message: "Message added successfully", newMessage });

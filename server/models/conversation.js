@@ -9,6 +9,10 @@ const conversationSchema = mongoose.Schema({
       profilePic: { type: String, required: true },
     },
   ],
+  lastMessage: {
+    content: { type: String },
+    timestamp: { type: Date },
+  },
   createdAt: { type: Date, default: new Date() },
 });
 
