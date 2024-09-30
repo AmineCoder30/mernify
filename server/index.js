@@ -30,7 +30,7 @@ const __dirname = path.dirname(__filename);
 
 app.use(bodyParser.json({ limit: "30mb", extended: true }));
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
-app.use(cors({ origin: CLIENT_URLL, credentials: true }));
+app.use(cors({ origin: CLIENT_URL, credentials: true }));
 
 app.use("/user", userRouter);
 app.use("/messages", messagesRouter);
