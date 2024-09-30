@@ -14,11 +14,6 @@ import conversationsRouter from "./routes/conversations.js";
 
 dotenv.config();
 const app = express();
-
-app.use(cors({ origin: process.env.CLIENT_URL, credentials: true }));
-app.use(bodyParser.json({ limit: "30mb", extended: true }));
-app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
-
 const server = createServer(app);
 const io = new Server(server, {
   cors: {
@@ -27,8 +22,6 @@ const io = new Server(server, {
     credentials: true,
   },
 });
-
-// ... rest of the code remains the same ...
 // Get __dirname equivalent in ES modules
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
