@@ -13,13 +13,15 @@ import messagesRouter from "./routes/messages.js";
 import conversationsRouter from "./routes/conversations.js";
 
 dotenv.config();
+const CLIENT_URL = "https://mernify.netlify.app"
 const app = express();
 const server = createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: process.env.CLIENT_URL,
+    origin: CLIENT_URL,
     methods: ["GET", "POST"],
     credentials: true,
+    allowedHeaders: ["*"],
   },
 });
 // Get __dirname equivalent in ES modules
@@ -28,7 +30,7 @@ const __dirname = path.dirname(__filename);
 
 app.use(bodyParser.json({ limit: "30mb", extended: true }));
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
-app.use(cors({ origin: process.env.CLIENT_URL, credentials: true }));
+app.use(cors({ origin: CLIENT_URLL, credentials: true }));
 
 app.use("/user", userRouter);
 app.use("/messages", messagesRouter);
