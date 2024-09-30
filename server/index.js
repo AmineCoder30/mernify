@@ -13,7 +13,7 @@ import messagesRouter from "./routes/messages.js";
 import conversationsRouter from "./routes/conversations.js";
 
 dotenv.config();
-const CLIENT_URL = "https://mernify.netlify.app"
+const CLIENT_URL = "https://mernify.netlify.app/"
 const app = express();
 const server = createServer(app);
 const io = new Server(server, {
