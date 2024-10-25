@@ -43,44 +43,44 @@ git clone https://github.com/your-username/mern-chat-app.git
 cd mern-chat-app
 
 
-2. Install dependencies
+**2. Install dependencies**
 
 Server-side dependencies: Navigate to the server folder and install dependencies.
 
-cd server
-npm install
+`cd server
+npm install`
 
 Client-side dependencies: Navigate to the client folder and install dependencies.
 
-cd ../client
-npm install
+`cd ../client
+npm install`
 
 
 
-3. Environment Variables
+**3. Environment Variables**
 
 Create a .env file in the server directory with the following:
 
-PORT=5000
+```PORT=5000
 MONGO_URI=your_mongodb_connection_string
-JWT_SECRET=your_jwt_secret_key
+JWT_SECRET=your_jwt_secret_key```
 
 
-4. Run the Application
+**4. Run the Application**
 
 Start the server:
 
-cd ../server
-npm start
+`cd ../server
+npm start`
 
 Start the client:
 
-cd ../client
-npm start
+`cd ../client
+npm start`
 
 
 
-5. Access the App
+**5. Access the App**
 
 Open your browser and go to http://localhost:3000.
 
@@ -88,7 +88,7 @@ Open your browser and go to http://localhost:3000.
 
 Folder Structure
 
-mern-chat-app
+`mern-chat-app
 │
 ├── server                # Backend (Node.js + Express)
 │   ├── config            # Configuration files (DB connection, environment variables)
@@ -105,7 +105,7 @@ mern-chat-app
     │   ├── context       # Context API for state management
     │   ├── pages         # Pages (e.g., ChatPage, LoginPage)
     │   ├── services      # API calls and utilities
-    │   └── App.js        # Main app file
+    │   └── App.js        # Main app file`
 
 Usage
 
