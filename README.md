@@ -68,19 +68,19 @@ JWT_SECRET=your_jwt_secret_key
 
 Start the server:
 
-`cd ../server
+`cd /server
 npm start`
 
 Start the client:
 
-`cd ../client
-npm start`
+`cd /client
+npm run dev`
 
 
 
 **5. Access the App**
 
-Open your browser and go to http://localhost:3000.
+Open your browser and go to http://localhost:5173.
 
 
 
