@@ -15,10 +15,6 @@ Image Uploading: Users can upload images to the chat, with a progress bar to tra
 
 Responsive Design: Works on both desktop and mobile devices.
 
-Typing Indicators: Show typing indicators for active conversations.
-
-Message History: Save chat history in MongoDB.
-
 Notifications: Get notifications for new messages.
 
 
@@ -37,22 +33,22 @@ File Upload: Multer (for image uploads)
 
 Installation
 
-1. Clone the repository
+**1. Clone the repository**
 
-git clone https://github.com/your-username/mern-chat-app.git
-cd mern-chat-app
+`git clone https://github.com/AmineCoder30/mernify.git
+cd mernify`
 
 
 **2. Install dependencies**
 
 Server-side dependencies: Navigate to the server folder and install dependencies.
 
-`cd server
+`cd /server
 npm install`
 
 Client-side dependencies: Navigate to the client folder and install dependencies.
 
-`cd ../client
+`cd /client
 npm install`
 
 
@@ -61,9 +57,11 @@ npm install`
 
 Create a .env file in the server directory with the following:
 
-```PORT=5000
+```
+PORT=5000
 MONGO_URI=your_mongodb_connection_string
-JWT_SECRET=your_jwt_secret_key```
+JWT_SECRET=your_jwt_secret_key
+```
 
 
 **4. Run the Application**
@@ -105,7 +103,8 @@ Folder Structure
     │   ├── context       # Context API for state management
     │   ├── pages         # Pages (e.g., ChatPage, LoginPage)
     │   ├── services      # API calls and utilities
-    │   └── App.js        # Main app file`
+    │   └── App.js        # Main app file
+    `
 
 Usage
 
