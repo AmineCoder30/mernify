@@ -44,7 +44,7 @@ function ChatContainer({ setshowContactList, setshowContactInfo }) {
   }, [messages]);
 
   return (
-    <div className="flex flex-col items-center  h-full w-full relative   bg-gray-100 ">
+    <div className="flex flex-col items-center  h-screen w-full relative   bg-gray-100 ">
       <header className="w-full border-b   p-4 bg-white z-50 text-gray-800  text-center flex justify-between items-center">
         <div>
           <Contact
@@ -63,8 +63,8 @@ function ChatContainer({ setshowContactList, setshowContactInfo }) {
           </button>
         </div>
       </header>
-      <main className="flex flex-col w-full flex-1  bg-white  overflow-hidden   ">
-        <div className="flex flex-col h-full min-h-[600px] max-h-[600px] p-4 w-full overflow-y-auto  ">
+      <main className="flex flex-col w-full flex-grow  bg-white  overflow-hidden   ">
+        <div className="flex flex-col flex-grow p-4 w-full overflow-y-auto  ">
           {/* Chat messages will go here */}
           {messages.length > 0 ? (
             messages.map((message, index) => {
@@ -76,6 +76,7 @@ function ChatContainer({ setshowContactList, setshowContactInfo }) {
                       : "justify-end"
                   } mb-4`}
                   ref={messageContainerRef}
+                  key={index}
                 >
                   <Message
                     sender={message?.sender?.name}
