@@ -100,7 +100,7 @@ function SendMessage({
         type: UPDATE_CONVERSATION,
         payload: {
           lastMessage: !msg.image ? msg.content : "photo",
-          conversationId: currentConversation._id,
+          conversationId: msg.conversationId,
         },
       });
     });
