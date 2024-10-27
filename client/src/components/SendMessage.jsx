@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { CREATE_MESSAGE, UPDATE_CONVERSATION } from "../constants/actionTypes";
 import { MdEmojiEmotions, MdOutlinePermMedia, MdSend } from "react-icons/md";
@@ -8,6 +8,7 @@ import socket from "../socketio/socket";
 import { ToastOptions } from "../constants/toastOptions";
 import { toast } from "react-toastify";
 import ToastMessage from "./ToastMessage";
+import song from "../assets/new-notification-7-210334.mp3";
 
 function SendMessage({
   message,
@@ -19,7 +20,7 @@ function SendMessage({
   const [showEmojiPicker, setShowEmojiPicker] = useState(false);
   const [imgDis, setimgDis] = useState(null);
   const profile = JSON.parse(localStorage.getItem("profile"));
-
+  const audioRef = useRef();
   const currentConversation = useSelector(
     (state) => state.conversations.currentConversation
   );
@@ -95,6 +96,7 @@ function SendMessage({
           <ToastMessage from={msg.sender.name} text={msg.content} />,
           ToastOptions
         );
+        audioRef.current.play();
       }
       dispatch({
         type: UPDATE_CONVERSATION,
@@ -112,6 +114,7 @@ function SendMessage({
 
   return (
     <div className="w-full  z-50 bg-white">
+      <audio src={song} ref={audioRef} className="hidden"></audio>
       <div className="relative flex p-4 gap-1 border-t">
         <button
           className="ml-2 px-3 bg-gray-100 rounded-lg text-[#2176ff] hover:bg-[#E4F2FF] hover:text-[#2176FF]"
