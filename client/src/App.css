@@ -1,0 +1,27 @@
+.isSender,
+.isNot {
+  position: relative;
+}
+.isSender::after {
+  position: absolute;
+  content: "";
+  right: -3px;
+  top: 0;
+  background-color: #e4f2ff;
+  width: 50px;
+  height: 10px;
+  transform: skewX(-40deg);
+}
+.isNot::before {
+  position: absolute;
+  content: "";
+  left: -3px;
+  top: 0;
+  background-color: rgb(33 118 255);
+  width: 50px;
+  height: 10px;
+  transform: skewX(32deg);
+}
+.Toastify__toast-container {
+  z-index: 99999999 !important;
+}

@@ -1,0 +1,18 @@
+// for authentication
+export const AUTH = "AUTH";
+export const GET_ALL_USERS = "GET_ALL_USERS";
+export const GET_ONLINE_USERS = "GET_ONLINE_USERS";
+export const SET_ERROR = "SET_ERROR";
+
+// for messages
+export const FETCH_MESSAGES = "FETCH_MESSAGES";
+export const CREATE_MESSAGE = "CREATE_MESSAGE";
+export const SET_MESSAGES = "SET_MESSAGES";
+export const DELETE_MESSAGES = "DELETE_MESSAGES";
+
+// for conversations
+export const FETCH_CONVERSATIONS = "FETCH_CONVERSATIONS";
+export const CREATE_CONVERSATION = "CREATE_CONVERSATION";
+export const REMOVE_CONVERSATION = "REMOVE_CONVERSATION";
+export const SET_CURRENT_CONVERSATION = "SET_CURRENT_CONVERSATION";
+export const UPDATE_CONVERSATION = "  UPDATE_CONVERSATION";
