@@ -88,8 +88,6 @@ function SendMessage({
 
   useEffect(() => {
     socket.on("msg-recieve", (msg) => {
-      console.log(msg.conversationId, currentConversation._id);
-      console.log(msg.conversationId === currentConversation._id);
       if (msg.conversationId === currentConversation._id) {
         dispatch({ type: CREATE_MESSAGE, payload: msg });
       } else {
@@ -110,7 +108,7 @@ function SendMessage({
     return () => {
       socket.off("msg-recieve");
     };
-  }, [dispatch]);
+  }, [dispatch, currentConversation]);
 
   return (
     <div className="w-full  z-50 bg-white">
