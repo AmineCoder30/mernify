@@ -26,10 +26,7 @@ export const addMessage = async (req, res) => {
 
     // Update the last message in the conversation
     await Conversation.findByIdAndUpdate(conversationId, {
-      lastMessage: {
-        content: newMessage.content,
-        timestamp: newMessage.timestamp,
-      },
+      lastMessage: newMessage.content,
     });
 
     // Send a success response
@@ -68,6 +65,11 @@ export const deleteMessages = async (req, res) => {
     const { id } = req.params;
 
     await Message.deleteMany({ conversationId: id });
+    // Update the last message in the conversation
+    console.log(id);
+    await Conversation.findByIdAndUpdate(id, {
+      lastMessage: "",
+    });
 
     res.status(200).json({ message: "Messages deleted successfully" });
   } catch (error) {

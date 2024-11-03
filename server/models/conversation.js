@@ -1,20 +1,19 @@
 import mongoose from "mongoose";
 
-const conversationSchema = mongoose.Schema({
-  conversationId: { type: String, required: true },
-  participants: [
-    {
-      userId: { type: String, required: true },
-      name: { type: String, required: true },
-      profilePic: { type: String, required: true },
-    },
-  ],
-  lastMessage: {
-    content: { type: String },
-    timestamp: { type: Date },
+const conversationSchema = mongoose.Schema(
+  {
+    conversationId: { type: String, required: true },
+    participants: [
+      {
+        userId: { type: String, required: true },
+        name: { type: String, required: true },
+        profilePic: { type: String, required: true },
+      },
+    ],
+    lastMessage: { type: String, default: "" },
   },
-  createdAt: { type: Date, default: new Date() },
-});
+  { timestamps: true }
+);
 
 const Conversation = mongoose.model("Conversation", conversationSchema);
 
